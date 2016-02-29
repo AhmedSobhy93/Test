@@ -1,3 +1,10 @@
+import java.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+import java.io.*;
+import java.io.IOException;
 
 
 panel=new JPanel();
