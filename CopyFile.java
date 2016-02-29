@@ -115,70 +115,7 @@ class CopyFile extends JFrame{
 			});
 			
 			
-		copy.addActionListener(new ActionListener(){
-				public void actionPerformed(ActionEvent e){	
-				
-				File f1=new File(text1.getText().toString());
-				File f2=new File(text2.getText().toString());
-				
-				
-				if(!f1.exists()){
-					System.out.println("Not Exist");
-					label3.setText("Invalid Source path");
-				}else if(!f2.exists()){
-					try{
-						f2.createNewFile();
-						copyFun(f1,f2);
-					}catch(Exception ex){
-						
-					}				
-				}else if(f2.exists()){
-					Object[] options = {"Replace",
-                    "Change Name",
-                    "Cancel"};
-					int output = JOptionPane.showOptionDialog(CopyFile.this
-				   , "Would you like to replace or change file name.."
-				   ,"File Exist"
-				   ,JOptionPane.YES_NO_CANCEL_OPTION
-				   ,JOptionPane.QUESTION_MESSAGE
-					,null
-					,options
-					,options[2]);
-						 if(output == JOptionPane.YES_OPTION){
-							copyFun(f1,f2);
-						 }else if(output == JOptionPane.NO_OPTION){
-						    String s = (String)JOptionPane.showInputDialog(
-							CopyFile.this,
-							"Please enter new file name\n"
-							,"File rename",
-							JOptionPane.PLAIN_MESSAGE);
-
-							
-							if ((s != null) && (s.length() > 0)) {
-								File f3=new File(f2.getParent()+"\\"+s);
-								System.out.println(f2.getParent());
-								f2.renameTo(f3);
-								boolean f=f2.renameTo(f3);
-								if(f==true){
-									System.out.println("renamed");
-								}else{
-									
-								}															
-							}
-						 }else if(output == JOptionPane.CANCEL_OPTION){
-							 
-						 }
-				}
-				else{					
-					copyFun(f1,f2);						
-				}
-				
-				}
-			});	
 		
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-	}
-	
 	
 	public void copyFun(File f1,File f2){
 			try{
