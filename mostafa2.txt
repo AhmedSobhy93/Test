@@ -1,8 +1,0 @@
-Hello github
- :D
-
-<<<<<<< HEAD
-No
-=======
-To be able at any moment to sacrifice what you are for what you will become
->>>>>>> 6700b65e249cb4b84d1041396678b1c6d66d520d
